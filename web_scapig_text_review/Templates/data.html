@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="{% static 'CSS/data.css' %}" />
+<!--    <link rel="stylesheet" href="../Static/data.css" />-->
+
+</head>
+<body>
+    <div class="main_div">
+        <h3>Showing Customer Review Data</h3>
+        <div class="customer_name mdiv">
+            <div class="heading">
+                <p>Customer Name</p>
+            </div>
+            {% for cnames in customer_name %}
+                {% for cname in cnames %}
+                    <div class="data d_al">
+                        {% if cname %}
+                            <p>{{cname}}</p>
+                        {% else %}
+                            <p>No Customer</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="customer_review mdiv">
+            <div class="heading">
+                <p>Customer Review</p>
+            </div>
+
+            {% for reviewes in customer_review %}
+                {% for review in reviewes %}
+                    <div class="data d_al">
+                        {% if review %}
+                            <p>{{review}}</p>
+                        {% else %}
+                            <p>No Review</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="customer_comments mdiv">
+            <div class="heading">
+                <p>Customer Comments</p>
+            </div>
+
+            {% for comments in customer_comments %}
+                {% for comment in comments %}
+                    <div class="data cmnt">
+                        {% if comment %}
+                            <p>{{comment}}</p>
+                        {% else %}
+                            <p>No Comment</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="customer_rating mdiv">
+            <div class="heading">
+                <p>Customer Rating</p>
+            </div>
+
+            {% for ratings in customer_rating %}
+                {% for rating in ratings %}
+                    <div class="data d_al">
+                        {% if rating %}
+                            <p>{{rating}}</p>
+                        {% else %}
+                            <p>No Rating</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+
+
